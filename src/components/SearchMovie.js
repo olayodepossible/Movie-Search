@@ -37,9 +37,11 @@ const SearchMovie = () => {
           Search
         </button>
       </form>
-      {movies.map((movie) => (
-        <Movie data={movie} key={movie.id} />
-      ))}
+      {movies
+        .filter((movie) => movie.poster_path)
+        .map((movie) => (
+          <Movie data={movie} key={movie.id} />
+        ))}
     </>
   );
 };
